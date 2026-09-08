@@ -1,0 +1,21 @@
+---
+const { current = '' } = Astro.props;
+const links = [
+  ['/', 'Home'],
+  ['/customer-success/', 'Customer Success'],
+  ['/operations-leadership/', 'Operations & Leadership'],
+  ['/process-improvement/', 'Process Improvement'],
+  ['/implementation-enablement/', 'Implementation & Enablement'],
+  ['/case-studies/', 'Case Studies'],
+  ['/resume/', 'Résumé'],
+  ['/contact/', 'Contact']
+];
+---
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/">Richard J. Allen</a>
+    <nav class="nav" aria-label="Primary">
+      {links.map(([href,label]) => <a href={href} aria-current={current === href ? 'page' : undefined}>{label}</a>)}
+    </nav>
+  </div>
+</header>
