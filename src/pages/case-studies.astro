@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const cases = [
+  {title:'Standardizing 100+ SOPs', context:'Oregon Employment Department', challenge:'A large operational area needed more consistent, usable process documentation and communication.', action:'Led and revamped a multi-month SOP initiative covering 100+ SOPs, supported staff communication, documentation, training, modernization, and continuous-improvement work.', outcome:'Created a more controlled foundation for repeatable work and gave staff clearer process references.'},
+  {title:'Supporting major software change', context:'HawkSoft', challenge:'Software releases required customers and support staff to be ready for changes at launch.', action:'Provided advance communication, recurring developer/support coordination, launch coverage, customer and staff training, and follow-up enablement.', outcome:'Helped connect technical changes to practical customer and support readiness.'},
+  {title:'Managing workforce visibility at scale', context:'Oregon Health Authority', challenge:'Leaders needed accurate position information across multiple divisions and functions.', action:'Managed 400+ position records, organizational charts, trackers, and 20+ recurring/ad-hoc workforce reports while coordinating with HR, Recruiting, Budget, Classification & Compensation, DEI, and leadership.', outcome:'Improved the availability and consistency of workforce information used for operational decisions.'},
+  {title:'Building a Customer Experience function', context:'The Kotter Group', challenge:'Customer experience work needed a defined operating approach.', action:'Established and managed the CX function and related processes, maintained client relationships, gathered feedback, supported retention/service improvement, and created customer-facing training and communications.', outcome:'Created a structured home for customer-experience work and a repeatable set of customer-facing practices.'}
+];
+---
+<BaseLayout title="Selected Work / Case Studies" current="/case-studies/" description="Selected, source-controlled case studies from Richard Allen's work in process improvement, SaaS support, customer experience, and operations.">
+<section class="page-intro"><div class="container"><div class="eyebrow">Selected Work / Case Studies</div><h1>Examples of how I approach messy operational problems.</h1><p class="lede">These examples stay within source-verified facts. They emphasize what I did, how I worked, and the scale that is supported by my career records.</p></div></section>
+<section class="section"><div class="container timeline">
+  {cases.map(c => <article class="card"><div class="kicker">{c.context}</div><h2>{c.title}</h2><p><strong>Challenge:</strong> {c.challenge}</p><p><strong>Action:</strong> {c.action}</p><p><strong>Result:</strong> {c.outcome}</p></article>)}
+</div></section>
+</BaseLayout>
