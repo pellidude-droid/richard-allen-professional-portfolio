@@ -1,0 +1,1 @@
+Temporary repository write-access check on 2026-09-09. This file may be removed after verification.
