@@ -1,0 +1,8 @@
+{
+  "redirects": [
+    { "source": "/operations", "destination": "/operations-leadership/", "permanent": true },
+    { "source": "/operations/", "destination": "/operations-leadership/", "permanent": true },
+    { "source": "/selected-work", "destination": "/case-studies/", "permanent": true },
+    { "source": "/selected-work/", "destination": "/case-studies/", "permanent": true }
+  ]
+}
