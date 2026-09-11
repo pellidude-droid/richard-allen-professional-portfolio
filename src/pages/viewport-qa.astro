@@ -1,11 +1,11 @@
 ---
 const routes = [
-  ['Home','/'],
-  ['Operations','/operations-leadership/'],
-  ['Customer Success','/customer-success/'],
-  ['Process Improvement','/process-improvement/'],
-  ['Implementation','/implementation-enablement/'],
-  ['Case Studies','/case-studies/']
+  ['Home','/','home'],
+  ['Operations','/operations-leadership/','operations'],
+  ['Customer Success','/customer-success/','customer'],
+  ['Process Improvement','/process-improvement/','process'],
+  ['Implementation','/implementation-enablement/','implementation'],
+  ['Case Studies','/case-studies/','cases']
 ];
 ---
 <!doctype html>
@@ -13,45 +13,38 @@ const routes = [
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Temporary Viewport QA</title>
+  <title>Temporary Viewport QA Matrix</title>
   <style>
-    *{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;background:#eef2f6;color:#16202a}header{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid #ccd6e0;padding:12px 16px}h1{font-size:18px;margin:0 0 10px}.routes{display:flex;gap:8px;flex-wrap:wrap}.routes button{border:1px solid #9badc0;border-radius:8px;background:#fff;padding:7px 10px;font-weight:700;cursor:pointer}.routes button.active{background:#153e75;color:#fff;border-color:#153e75}.meta{font-size:12px;color:#5a6978;margin-top:8px}.stage{display:grid;grid-template-columns:420px 800px;gap:18px;padding:18px;align-items:start;min-width:1260px}.panel{background:#fff;border:1px solid #cad5df;border-radius:12px;padding:12px;box-shadow:0 8px 24px rgba(20,40,60,.07)}.panel h2{font-size:15px;margin:0 0 8px}.frame-wrap{overflow:auto;background:#dce5ed;padding:8px;border-radius:8px}.mobile-frame{width:390px;height:844px;border:0;background:#fff;display:block}.tablet-frame{width:768px;height:1024px;border:0;background:#fff;display:block}.diag{margin-top:8px;white-space:pre-wrap;font:12px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;background:#0f1720;color:#e7f0f7;padding:10px;border-radius:8px;min-height:92px}.pass{color:#7ee787}.fail{color:#ff7b72}
+    *{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;background:#eef2f6;color:#16202a}header{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid #ccd6e0;padding:12px 18px}h1{font-size:20px;margin:0 0 4px}.meta{font-size:13px;color:#5a6978}.matrix{display:grid;gap:22px;padding:18px;min-width:1260px}.route-row{display:grid;grid-template-columns:420px 800px;gap:18px;align-items:start}.panel{background:#fff;border:1px solid #cad5df;border-radius:12px;padding:12px;box-shadow:0 8px 24px rgba(20,40,60,.07)}.panel h2{font-size:15px;margin:0 0 8px}.frame-wrap{overflow:auto;background:#dce5ed;padding:8px;border-radius:8px}.mobile-frame{width:390px;height:844px;border:0;background:#fff;display:block}.tablet-frame{width:768px;height:1024px;border:0;background:#fff;display:block}.diag{margin-top:8px;white-space:pre-wrap;font:12px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;background:#0f1720;color:#e7f0f7;padding:10px;border-radius:8px;min-height:108px}.pass{color:#7ee787}.fail{color:#ff7b72}.route-label{font-weight:800;color:#153e75}
   </style>
 </head>
 <body>
 <header>
-  <h1>Temporary exact-viewport QA harness</h1>
-  <div class="routes">
-    {routes.map(([label,path],i)=><button class={i===0?'active':''} data-route={path}>{label}</button>)}
-  </div>
-  <div class="meta">Real same-origin iframe viewports: mobile 390×844 · tablet 768×1024. Diagnostics continuously measure rendered document width and element bounds.</div>
+  <h1>Temporary exact-viewport QA matrix</h1>
+  <div class="meta">All six recruiter pages rendered simultaneously in same-origin frames: mobile 390×844 and tablet 768×1024. Diagnostics continuously measure rendered width, navigation overflow mode, and out-of-bounds content.</div>
 </header>
-<main class="stage">
-  <section class="panel">
-    <h2 id="mobile-title">Mobile · Home · 390×844</h2>
-    <div class="frame-wrap"><iframe id="mobile" class="mobile-frame" src="/" title="Mobile viewport"></iframe></div>
-    <div id="mobile-diag" class="diag">Loading…</div>
-  </section>
-  <section class="panel">
-    <h2 id="tablet-title">Tablet · Home · 768×1024</h2>
-    <div class="frame-wrap"><iframe id="tablet" class="tablet-frame" src="/" title="Tablet viewport"></iframe></div>
-    <div id="tablet-diag" class="diag">Loading…</div>
-  </section>
+<main class="matrix">
+  {routes.map(([label,path,key]) => (
+    <section class="route-row" data-route={key}>
+      <div class="panel">
+        <h2><span class="route-label">{label}</span> · Mobile · 390×844</h2>
+        <div class="frame-wrap"><iframe id={`m-${key}`} class="mobile-frame" src={path} title={`${label} mobile viewport`}></iframe></div>
+        <div id={`md-${key}`} class="diag">Loading…</div>
+      </div>
+      <div class="panel">
+        <h2><span class="route-label">{label}</span> · Tablet · 768×1024</h2>
+        <div class="frame-wrap"><iframe id={`t-${key}`} class="tablet-frame" src={path} title={`${label} tablet viewport`}></iframe></div>
+        <div id={`td-${key}`} class="diag">Loading…</div>
+      </div>
+    </section>
+  ))}
 </main>
-<script>
-  const routeLabels = new Map([
-    ['/','Home'],
-    ['/operations-leadership/','Operations'],
-    ['/customer-success/','Customer Success'],
-    ['/process-improvement/','Process Improvement'],
-    ['/implementation-enablement/','Implementation'],
-    ['/case-studies/','Case Studies']
-  ]);
+<script define:vars={{ routes }}>
   function inspectFrame(frame, out){
     try {
       const w = frame.contentWindow;
       const d = frame.contentDocument;
-      if (!d || !d.documentElement || !d.body) return;
+      if (!w || !d || !d.documentElement || !d.body) return;
       const root = d.documentElement;
       const body = d.body;
       const vw = w.innerWidth;
@@ -62,7 +55,7 @@ const routes = [
         if (s.display === 'none' || s.visibility === 'hidden' || s.position === 'fixed') return false;
         const r = el.getBoundingClientRect();
         return r.width > 0 && (r.right > vw + 1 || r.left < -1);
-      }).slice(0,8).map(el => {
+      }).slice(0,10).map(el => {
         const r = el.getBoundingClientRect();
         const cls = typeof el.className === 'string' && el.className ? '.' + el.className.trim().split(/\s+/).slice(0,2).join('.') : '';
         return `${el.tagName.toLowerCase()}${cls} [${Math.round(r.left)},${Math.round(r.right)}]`;
@@ -70,30 +63,20 @@ const routes = [
       const docWidth = Math.max(root.scrollWidth, body.scrollWidth || 0);
       const overflow = docWidth > vw + 1;
       const navInfo = nav ? `nav ${nav.clientWidth}/${nav.scrollWidth}px overflow-x=${w.getComputedStyle(nav).overflowX}` : 'nav n/a';
-      const path = w.location.pathname;
-      out.innerHTML = `path=${path}\n${overflow?'<span class="fail">FAIL horizontal overflow</span>':'<span class="pass">PASS no page-level overflow</span>'}\ninnerWidth=${vw}px documentWidth=${docWidth}px\n${navInfo}\nout-of-bounds (excluding scrollable nav): ${candidates.length?candidates.join('; '):'none'}`;
+      const h1=d.querySelector('h1');
+      let h1info='h1 n/a';
+      if(h1){const cs=w.getComputedStyle(h1),r=h1.getBoundingClientRect(),lh=parseFloat(cs.lineHeight)||parseFloat(cs.fontSize)*1.2;h1info=`h1 ~${Math.max(1,Math.round(r.height/lh))} lines, ${cs.fontSize}`;}
+      out.innerHTML = `path=${w.location.pathname}\n${overflow?'<span class="fail">FAIL horizontal overflow</span>':'<span class="pass">PASS no page-level overflow</span>'}\ninnerWidth=${vw}px documentWidth=${docWidth}px\n${navInfo}\n${h1info}\nout-of-bounds excluding nav: ${candidates.length?candidates.join('; '):'none'}`;
     } catch(err){ out.textContent = 'Inspection error: ' + err; }
   }
-  const mobile = document.querySelector('#mobile');
-  const tablet = document.querySelector('#tablet');
-  const mobileDiag = document.querySelector('#mobile-diag');
-  const tabletDiag = document.querySelector('#tablet-diag');
-  const measure = ()=>{ inspectFrame(mobile,mobileDiag); inspectFrame(tablet,tabletDiag); };
-  mobile.addEventListener('load',()=>setTimeout(measure,250));
-  tablet.addEventListener('load',()=>setTimeout(measure,250));
-  setInterval(measure,1000);
-  document.querySelectorAll('[data-route]').forEach(btn => btn.addEventListener('click',()=>{
-    document.querySelectorAll('[data-route]').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const route = btn.dataset.route;
-    const label = routeLabels.get(route) || route;
-    document.querySelector('#mobile-title').textContent = `Mobile · ${label} · 390×844`;
-    document.querySelector('#tablet-title').textContent = `Tablet · ${label} · 768×1024`;
-    mobileDiag.textContent='Loading…';
-    tabletDiag.textContent='Loading…';
-    mobile.src = route;
-    tablet.src = route;
-  }));
+  function measureAll(){
+    for (const [, , key] of routes){
+      inspectFrame(document.getElementById(`m-${key}`),document.getElementById(`md-${key}`));
+      inspectFrame(document.getElementById(`t-${key}`),document.getElementById(`td-${key}`));
+    }
+  }
+  window.addEventListener('load',()=>setTimeout(measureAll,500));
+  setInterval(measureAll,1200);
 </script>
 </body>
 </html>
