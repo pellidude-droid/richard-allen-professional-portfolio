@@ -24,7 +24,7 @@ const routes = [
   <div class="routes">
     {routes.map(([label,path],i)=><button class={i===0?'active':''} data-route={path}>{label}</button>)}
   </div>
-  <div class="meta">Real same-origin iframe viewports: mobile 390×844 · tablet 768×1024. Diagnostics measure rendered document width and element bounds.</div>
+  <div class="meta">Real same-origin iframe viewports: mobile 390×844 · tablet 768×1024. Diagnostics continuously measure rendered document width and element bounds.</div>
 </header>
 <main class="stage">
   <section class="panel">
@@ -51,6 +51,7 @@ const routes = [
     try {
       const w = frame.contentWindow;
       const d = frame.contentDocument;
+      if (!d || !d.documentElement || !d.body) return;
       const root = d.documentElement;
       const body = d.body;
       const vw = w.innerWidth;
@@ -58,7 +59,7 @@ const routes = [
       const candidates = [...d.querySelectorAll('body *')].filter(el => {
         if (el.closest('.nav')) return false;
         const s = w.getComputedStyle(el);
-        if (s.display === 'none' || s.visibility === 'hidden') return false;
+        if (s.display === 'none' || s.visibility === 'hidden' || s.position === 'fixed') return false;
         const r = el.getBoundingClientRect();
         return r.width > 0 && (r.right > vw + 1 || r.left < -1);
       }).slice(0,8).map(el => {
@@ -66,16 +67,21 @@ const routes = [
         const cls = typeof el.className === 'string' && el.className ? '.' + el.className.trim().split(/\s+/).slice(0,2).join('.') : '';
         return `${el.tagName.toLowerCase()}${cls} [${Math.round(r.left)},${Math.round(r.right)}]`;
       });
-      const docWidth = Math.max(root.scrollWidth, body?.scrollWidth || 0);
+      const docWidth = Math.max(root.scrollWidth, body.scrollWidth || 0);
       const overflow = docWidth > vw + 1;
       const navInfo = nav ? `nav ${nav.clientWidth}/${nav.scrollWidth}px overflow-x=${w.getComputedStyle(nav).overflowX}` : 'nav n/a';
-      out.innerHTML = `${overflow?'<span class="fail">FAIL horizontal overflow</span>':'<span class="pass">PASS no page-level overflow</span>'}\ninnerWidth=${vw}px documentWidth=${docWidth}px\n${navInfo}\nout-of-bounds (excluding scrollable nav): ${candidates.length?candidates.join('; '):'none'}`;
+      const path = w.location.pathname;
+      out.innerHTML = `path=${path}\n${overflow?'<span class="fail">FAIL horizontal overflow</span>':'<span class="pass">PASS no page-level overflow</span>'}\ninnerWidth=${vw}px documentWidth=${docWidth}px\n${navInfo}\nout-of-bounds (excluding scrollable nav): ${candidates.length?candidates.join('; '):'none'}`;
     } catch(err){ out.textContent = 'Inspection error: ' + err; }
   }
   const mobile = document.querySelector('#mobile');
   const tablet = document.querySelector('#tablet');
-  mobile.addEventListener('load',()=>setTimeout(()=>inspectFrame(mobile,document.querySelector('#mobile-diag')),350));
-  tablet.addEventListener('load',()=>setTimeout(()=>inspectFrame(tablet,document.querySelector('#tablet-diag')),350));
+  const mobileDiag = document.querySelector('#mobile-diag');
+  const tabletDiag = document.querySelector('#tablet-diag');
+  const measure = ()=>{ inspectFrame(mobile,mobileDiag); inspectFrame(tablet,tabletDiag); };
+  mobile.addEventListener('load',()=>setTimeout(measure,250));
+  tablet.addEventListener('load',()=>setTimeout(measure,250));
+  setInterval(measure,1000);
   document.querySelectorAll('[data-route]').forEach(btn => btn.addEventListener('click',()=>{
     document.querySelectorAll('[data-route]').forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
@@ -83,8 +89,8 @@ const routes = [
     const label = routeLabels.get(route) || route;
     document.querySelector('#mobile-title').textContent = `Mobile · ${label} · 390×844`;
     document.querySelector('#tablet-title').textContent = `Tablet · ${label} · 768×1024`;
-    document.querySelector('#mobile-diag').textContent='Loading…';
-    document.querySelector('#tablet-diag').textContent='Loading…';
+    mobileDiag.textContent='Loading…';
+    tabletDiag.textContent='Loading…';
     mobile.src = route;
     tablet.src = route;
   }));
