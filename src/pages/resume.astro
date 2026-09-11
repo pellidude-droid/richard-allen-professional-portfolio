@@ -12,32 +12,53 @@ const roles = [
 ];
 ---
 <BaseLayout title="Résumé" current="/resume/" description="Résumé for Richard J. Allen, an operations, customer-success, process-improvement, and people-leadership professional based in Keizer, Oregon.">
-<section class="page-intro no-print"><div class="container"><div class="eyebrow">Résumé</div><h1>Richard J. Allen</h1><p class="lede">Operations · Customer Success · Process Improvement · People Leadership</p><div class="actions"><button class="button" onclick="window.print()">Print / Save as PDF</button><a class="button secondary" href="/contact/">Contact</a></div></div></section>
-
-<section class="section resume-overview no-print"><div class="container">
-  <div class="stats-grid compact-stats">
-    <article class="stat-card teal"><div class="stat-orbit"><span class="metric">32</span></div><div class="metric-label">support & technical-support representatives managed as Customer Support Manager, excluding four team leads</div></article>
-    <article class="stat-card blue"><div class="stat-orbit"><span class="metric">125+</span></div><div class="metric-label">SOPs encompassed by a year-long modernization and governance program</div></article>
-    <article class="stat-card gold"><div class="stat-orbit"><span class="metric">400+</span></div><div class="metric-label">position records managed at OHA</div></article>
-    <article class="stat-card violet"><div class="stat-orbit"><span class="metric">20+</span></div><div class="metric-label">recurring and ad-hoc workforce reports maintained for leadership</div></article>
+<section class="resume-hero no-print"><div class="container resume-hero-grid">
+  <div>
+    <div class="eyebrow light">Résumé · Career Snapshot</div>
+    <h1>Richard J. Allen</h1>
+    <p class="resume-hero-line">Operations · Customer Success · Process Improvement · People Leadership</p>
+    <p class="resume-hero-copy">A concise chronology of the same source-controlled experience shown visually throughout the portfolio.</p>
+    <div class="actions"><button class="button button-light" onclick="window.print()">Print / Save as PDF</button><a class="role-hero-link" href="/contact/">Contact →</a></div>
   </div>
-  <div class="competency-cloud"><span>Operations</span><span>Customer Success</span><span>SaaS Support</span><span>People Management</span><span>Cascading SMART Goals</span><span>Strategic Goal Alignment</span><span>Process Improvement</span><span>SOP Governance</span><span>Training</span><span>Reporting</span><span>Cross-Functional Coordination</span><span>Change Support</span></div>
+  <div class="resume-snapshot" aria-label="Career highlights">
+    <div><strong>32</strong><span>support & technical-support representatives managed</span></div>
+    <div><strong>125+</strong><span>SOP modernization and governance program</span></div>
+    <div><strong>400+</strong><span>workforce position records managed at OHA</span></div>
+    <div><strong>20+</strong><span>recurring and ad-hoc workforce reports</span></div>
+  </div>
 </div></section>
 
-<section class="section"><div class="container"><div class="resume-sheet">
-  <div class="resume-header-grid"><div><h1 style="font-size:2rem;margin-bottom:.3rem">Richard Allen</h1><p><strong>Operations | Customer Success | Process Improvement | People Leadership</strong></p></div><div class="resume-contact">Keizer, Oregon<br/><a href="mailto:rjallencareer@gmail.com">rjallencareer@gmail.com</a><br/><a href="https://www.linkedin.com/in/richardjallen">linkedin.com/in/richardjallen</a></div></div>
+<section class="resume-route no-print"><div class="container">
+  <div class="resume-route-row">
+    <div><div class="eyebrow">Explore by hiring need</div><strong>Prefer a visual portfolio instead of chronology?</strong></div>
+    <nav aria-label="Resume role pathways"><a href="/operations-leadership/">Operations</a><a href="/customer-success/">Customer Success</a><a href="/process-improvement/">Process Improvement</a><a href="/implementation-enablement/">Implementation</a><a href="/case-studies/">Case Studies</a></nav>
+  </div>
+</div></section>
+
+<section class="section resume-section"><div class="container"><div class="resume-sheet">
+  <div class="resume-header-grid"><div><div class="resume-kicker">PUBLIC WEB RÉSUMÉ</div><h1>Richard Allen</h1><p><strong>Operations | Customer Success | Process Improvement | People Leadership</strong></p></div><div class="resume-contact">Keizer, Oregon<br/><a href="mailto:rjallencareer@gmail.com">rjallencareer@gmail.com</a><br/><a href="https://www.linkedin.com/in/richardjallen">linkedin.com/in/richardjallen</a></div></div>
 
   <h2>Professional Summary</h2><p>Operations and customer-experience leader with more than 10 years of experience across SaaS support, people management, process improvement, reporting, training, administrative operations, and cross-functional coordination. Managed 21 people as a Team Lead and later 32 representatives as Customer Support Manager, not including four team leads. Known for making complex work clearer through practical documentation, usable reporting, coaching, strategic goal alignment, and repeatable workflows.</p>
 
-  <h2>Core Competencies</h2><p>Operations & Workflow Coordination · Customer Success & Customer Experience · People Management, Coaching & Onboarding · Cascading SMART Goals & Strategic Goal Alignment · Objectives/OKR & KPI Alignment · SaaS / Technical Support · Process Improvement · SOP & Documentation Governance · Training & Enablement · Operational Reporting · Excel & Spreadsheets · Cross-Functional Coordination · Escalation & Quality Support · Client Relationship Management · Change Support · Warehouse & Inventory Operations</p>
+  <h2>Core Competencies</h2><div class="resume-tags"><span>Operations & Workflow Coordination</span><span>Customer Success & Customer Experience</span><span>People Management & Coaching</span><span>Strategic Goal Alignment</span><span>Objectives / OKR & KPI Alignment</span><span>SaaS / Technical Support</span><span>Process Improvement</span><span>SOP Governance</span><span>Training & Enablement</span><span>Operational Reporting</span><span>Cross-Functional Coordination</span><span>Change Support</span></div>
 
   <h2>Professional Experience</h2>
-  {roles.map(([org,title,bullets]) => <div class="role"><div class="role-head"><h3>{org}</h3><div class="role-meta">{title}</div></div><ul class="list-clean">{bullets.map(b => <li>{b}</li>)}</ul></div>)}
+  <div class="resume-timeline">{roles.map(([org,title,bullets]) => <div class="role"><div class="timeline-dot" aria-hidden="true"></div><div class="role-head"><h3>{org}</h3><div class="role-meta">{title}</div></div><ul class="list-clean">{bullets.map(b => <li>{b}</li>)}</ul></div>)}</div>
 
   <h2>Earlier Experience</h2><p>Additional customer-service, sales, technical-support, insurance, broadband, healthcare-support, and community-service experience includes Primerica Insurance, HSBC Credit Card Services, Big Dog Satellite, Willamette Broadband, Guthrie Mainstream, and Shady Grove Adventist Hospital.</p>
 
-  <h2>Education / College Coursework</h2><p>Brigham Young University–Idaho — Business Administration coursework</p>
+  <h2>Education</h2><p><strong>Brigham Young University–Idaho</strong> — B.S. in Business Administration · attended 2007–2011; degree completed.</p>
 
   <h2>Technology</h2><p>Microsoft Word, Excel, PowerPoint & Outlook · SharePoint · HawkSoft CMS · CRM / customer-management systems · SaaS / software support · EHR systems · Workday · Asana project reporting/dashboard exposure · reporting and tracking tools · Power BI (developing exposure)</p>
 </div></div></section>
+
+<style>
+  .resume-hero{padding:4.5rem 0 3.7rem;color:#fff;background:radial-gradient(circle at 83% 16%,rgba(15,118,110,.3),transparent 27%),linear-gradient(128deg,#102f55 0%,#153e75 65%,#164d61 100%)}
+  .resume-hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(360px,.85fr);gap:3rem;align-items:end}.resume-hero h1{font-size:clamp(3rem,7vw,5.5rem);margin:.45rem 0 .5rem;letter-spacing:-.055em}.resume-hero-line{font-size:clamp(1.05rem,2vw,1.28rem);font-weight:750;color:#e7f0f6;margin:.4rem 0}.resume-hero-copy{max-width:660px;color:#cddbe7}.role-hero-link{color:#fff;font-weight:800;text-decoration:none;align-self:center}.resume-snapshot{display:grid;grid-template-columns:1fr 1fr;border:1px solid rgba(255,255,255,.18);border-radius:22px;overflow:hidden;background:rgba(255,255,255,.07);box-shadow:0 24px 60px rgba(0,0,0,.15)}.resume-snapshot>div{padding:1.15rem;border-right:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)}.resume-snapshot strong{display:block;font-size:2.25rem;line-height:1;color:#fff}.resume-snapshot span{display:block;margin-top:.4rem;color:#dbe7f0;font-size:.82rem;line-height:1.35}
+  .resume-route{background:#fff;border-bottom:1px solid var(--border)}.resume-route-row{padding:1.1rem 0;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}.resume-route-row strong{display:block;margin-top:.15rem}.resume-route nav{display:flex;gap:.45rem;flex-wrap:wrap;justify-content:flex-end}.resume-route nav a{padding:.38rem .65rem;border:1px solid var(--border);border-radius:999px;background:#f8fafc;text-decoration:none;font-size:.82rem;font-weight:800}.resume-section{background:linear-gradient(180deg,#f5f8fc,#f7f8fa)}
+  .resume-sheet{border-radius:22px;padding:2.25rem 2.4rem;box-shadow:0 20px 55px rgba(23,32,42,.08);max-width:1000px;margin-inline:auto}.resume-header-grid{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;padding-bottom:1rem;border-bottom:3px solid var(--accent)}.resume-header-grid h1{font-size:2.35rem;margin:.2rem 0}.resume-kicker{font-size:.67rem;font-weight:900;letter-spacing:.14em;color:var(--accent-2)}.resume-contact{text-align:right;color:var(--muted);font-size:.92rem}.resume-sheet h2{margin-top:2rem;color:var(--accent);font-size:1.1rem;text-transform:uppercase;letter-spacing:.06em}.resume-tags{display:flex;flex-wrap:wrap;gap:.45rem}.resume-tags span{padding:.32rem .58rem;border-radius:999px;background:var(--soft);color:#334155;font-size:.78rem;font-weight:700}.resume-timeline{position:relative;margin-left:.35rem}.resume-timeline:before{content:"";position:absolute;left:4px;top:.4rem;bottom:.4rem;width:2px;background:#dce4ec}.resume-sheet .role{position:relative;padding:0 0 0 1.65rem;margin:1.35rem 0}.timeline-dot{position:absolute;left:-1px;top:.35rem;width:12px;height:12px;border-radius:50%;background:#fff;border:3px solid var(--teal);z-index:1}.resume-sheet .role h3{font-size:1.04rem}.resume-sheet .role-meta{font-weight:750;color:var(--accent);max-width:440px;text-align:right}.resume-sheet .list-clean{margin:.6rem 0 0}.resume-sheet li{margin:.35rem 0;color:#394653}
+  @media(max-width:900px){.resume-hero-grid{grid-template-columns:1fr}.resume-snapshot{max-width:650px}.resume-route-row{align-items:flex-start;flex-direction:column}.resume-route nav{justify-content:flex-start}.resume-header-grid{grid-template-columns:1fr}.resume-contact{text-align:left}.resume-sheet .role-head{display:block}.resume-sheet .role-meta{text-align:left;max-width:none;margin-top:.25rem}}
+  @media(max-width:600px){.resume-hero{padding:3.4rem 0 3rem}.resume-snapshot{grid-template-columns:1fr 1fr}.resume-snapshot>div{padding:.9rem}.resume-snapshot strong{font-size:1.75rem}.resume-sheet{padding:1.25rem;border-radius:16px}.resume-header-grid h1{font-size:2rem}.resume-timeline{margin-left:0}.resume-tags span{font-size:.74rem}}
+  @media print{.site-header,.site-footer,.no-print,.resume-route{display:none!important}.resume-section{padding:0;background:#fff}.container{width:100%;max-width:none}.resume-sheet{border:0;box-shadow:none;padding:0;max-width:none}.resume-header-grid{padding-bottom:.5rem}.resume-sheet h2{page-break-after:avoid}.resume-sheet .role{break-inside:avoid}.resume-timeline:before,.timeline-dot{display:none}.resume-sheet .role{padding-left:0}.resume-tags span{border:1px solid #ddd;background:#fff}.resume-contact a{color:#000;text-decoration:none}body{background:#fff;font-size:10.5pt}}
+</style>
 </BaseLayout>
