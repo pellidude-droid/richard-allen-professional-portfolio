@@ -129,3 +129,34 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <div class="callout"><strong>Professional relevance:</strong> the value here is the pattern—listening, organizing, mentoring, communicating, protecting trust, and helping groups move through real-world needs. Private pastoral details, names of people served, youth identities, household information, and unnecessary religious specifics are intentionally omitted.</div>
 </div></section>
 </BaseLayout>
+
+<style>
+  .toolkit-section{background:linear-gradient(180deg,#f5f8fc 0%,#f7f8fa 100%);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .toolkit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+  .toolkit-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:1rem;box-shadow:0 12px 28px rgba(23,32,42,.06)}
+  .toolkit-card h3{margin:1.1rem 0 .45rem}
+  .toolkit-card p{color:var(--muted);margin:0}
+  .artifact-top{display:flex;align-items:center;justify-content:space-between;gap:.7rem;margin-bottom:.75rem;color:var(--muted);font-size:.84rem;font-weight:750}
+  .artifact-year{display:inline-flex;align-items:center;justify-content:center;padding:.2rem .55rem;border-radius:999px;background:var(--blue-soft);color:var(--accent);font-weight:850}
+  .artifact-paper{min-height:275px;border:1px solid #d7dee7;border-radius:12px;padding:1rem;background:linear-gradient(180deg,#fff 0%,#fbfcfd 100%);box-shadow:0 8px 20px rgba(23,32,42,.08);position:relative;overflow:hidden}
+  .artifact-paper::after{content:"SANITIZED RECONSTRUCTION";position:absolute;right:-42px;bottom:22px;transform:rotate(-35deg);font-size:.62rem;letter-spacing:.12em;font-weight:850;color:rgba(21,62,117,.14)}
+  .artifact-line{display:grid;grid-template-columns:82px 1fr;gap:.7rem;padding:.67rem 0;border-bottom:1px solid #edf1f4;position:relative;z-index:1}
+  .artifact-line:last-child{border-bottom:0}
+  .artifact-line b{font-size:.72rem;letter-spacing:.06em;color:var(--accent)}
+  .artifact-line span{font-size:.86rem;color:#455463;line-height:1.35}
+  .cadence-preview{display:flex;flex-direction:column;justify-content:center;gap:.2rem}
+  .cadence-row{display:grid;grid-template-columns:54px 1fr;align-items:center;gap:.65rem;padding:.68rem;border:1px solid #e5eaf0;border-radius:10px;background:#fff;position:relative;z-index:1}
+  .cadence-row span{font-size:.68rem;font-weight:850;letter-spacing:.08em;color:var(--teal)}
+  .cadence-row strong{font-size:.92rem}
+  .cadence-arrow{text-align:center;color:#94a3b8;font-weight:900;line-height:1;position:relative;z-index:1}
+  .cadence-note{font-size:.76rem;color:var(--muted);text-align:center;margin-top:.35rem;position:relative;z-index:1}
+  .bulletin-preview{padding:1.15rem}
+  .bulletin-title{font-size:.78rem;font-weight:900;letter-spacing:.08em;color:var(--accent);position:relative;z-index:1}
+  .bulletin-rule{height:3px;background:linear-gradient(90deg,var(--accent),var(--teal));margin:.55rem 0 1rem;border-radius:999px;position:relative;z-index:1}
+  .bulletin-block{display:flex;justify-content:space-between;gap:.7rem;padding:.62rem 0;border-bottom:1px solid #edf1f4;position:relative;z-index:1}
+  .bulletin-block strong{font-size:.72rem;letter-spacing:.06em;color:var(--gold)}
+  .bulletin-block span{font-size:.83rem;color:#455463;text-align:right}
+  .bulletin-deadline{margin-top:1rem;padding:.55rem .65rem;border-radius:8px;background:var(--gold-soft);color:#75500f;font-size:.78rem;font-weight:800;position:relative;z-index:1}
+  .toolkit-callout{margin-top:1.4rem}
+  @media(max-width:900px){.toolkit-grid{grid-template-columns:1fr}.artifact-paper{min-height:auto}.toolkit-card{padding:1.15rem}}
+</style>
