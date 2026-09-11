@@ -10,14 +10,50 @@ const fullTitle = title ? `${title} | Richard J. Allen` : 'Richard J. Allen | Op
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content={description} />
   <meta name="theme-color" content="#153e75" />
   <title>{fullTitle}</title>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <Header current={current} />
-  <main><slot /></main>
+  <main id="main-content"><slot /></main>
   <Footer />
 </body>
 </html>
+
+<style is:global>
+  :root { --gold: #9a6518; }
+  .skip-link {
+    position: fixed;
+    left: 1rem;
+    top: 1rem;
+    z-index: 1000;
+    padding: .7rem 1rem;
+    border-radius: 8px;
+    background: #fff;
+    color: #153e75;
+    font-weight: 800;
+    box-shadow: 0 8px 24px rgba(0,0,0,.18);
+    transform: translateY(-180%);
+    transition: transform .15s ease;
+  }
+  .skip-link:focus { transform: translateY(0); }
+  a:focus-visible,
+  button:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 3px solid #0f766e;
+    outline-offset: 3px;
+    border-radius: 5px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      scroll-behavior: auto !important;
+      animation-duration: .01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .01ms !important;
+    }
+  }
+</style>
