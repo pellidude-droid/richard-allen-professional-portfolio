@@ -2,24 +2,34 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="Community & Volunteer Leadership" current="/community-leadership/" description="Community and volunteer leadership experience from Richard J. Allen, including hospital chaplaincy, volunteer operations and communications, emergency-preparedness coordination, mentoring, technology adoption, and disaster-response service.">
-<section class="page-intro"><div class="container">
-  <div class="eyebrow">Community & Volunteer Leadership</div>
-  <h1>Leadership shows up outside the job title, too.</h1>
-  <p class="lede">Volunteer service has reinforced the same habits I use professionally: listening carefully, organizing people and information, communicating clearly, mentoring, protecting confidentiality, and helping people through difficult situations.</p>
-</div></section>
-
-<section class="section impact-section"><div class="container">
-  <div class="skill-transfer" aria-label="Volunteer skills that transfer to professional work">
-    <div class="skill-node teal"><span>LISTEN</span><strong>Understand before acting</strong><small>Useful in coaching, customer work, conflict, and change.</small></div>
-    <div class="skill-node blue"><span>ORGANIZE</span><strong>Create structure</strong><small>Useful in meetings, logistics, records, and follow-through.</small></div>
-    <div class="skill-node gold"><span>SUPPORT</span><strong>Stay calm under pressure</strong><small>Useful in escalations, service, and difficult conversations.</small></div>
-    <div class="skill-node violet"><span>COMMUNICATE</span><strong>Make the next step clear</strong><small>Useful in leadership, training, and coordination.</small></div>
+<section class="community-hero"><div class="container community-hero-grid">
+  <div>
+    <div class="eyebrow light">Community & Volunteer Leadership</div>
+    <h1>Service reinforces the same habits that make operations work.</h1>
+    <p>Volunteer experience has strengthened listening, organization, communication, mentoring, confidentiality, continuity planning, and practical follow-through—without turning private service into public storytelling.</p>
+    <div class="actions"><a class="button button-light" href="#service-in-practice">Explore service experience</a><a class="community-hero-link" href="/operations-leadership/">See professional leadership →</a></div>
+  </div>
+  <div class="service-bridge" aria-label="Volunteer habits that transfer to professional leadership">
+    <div class="bridge-title">SERVICE → OPERATING HABITS</div>
+    <div class="bridge-grid">
+      <div class="bridge-node teal"><span>LISTEN</span><strong>Understand</strong><small>coaching · customers · difficult moments</small></div>
+      <div class="bridge-node blue"><span>ORGANIZE</span><strong>Structure</strong><small>records · logistics · reporting · follow-through</small></div>
+      <div class="bridge-node gold"><span>SUPPORT</span><strong>Stabilize</strong><small>service · preparedness · continuity</small></div>
+      <div class="bridge-node violet"><span>COMMUNICATE</span><strong>Clarify</strong><small>training · coordination · next steps</small></div>
+    </div>
   </div>
 </div></section>
 
-<section class="section"><div class="container">
+<section class="community-proof-band"><div class="container community-proof-grid" aria-label="Selected volunteer leadership proof">
+  <div><strong>2012–2022</strong><span>documented volunteer operations & communications examples</span></div>
+  <div><strong>2023–24</strong><span>regular Salem Health / Salem Hospital volunteer chaplain service</span></div>
+  <div><strong>2012 → 2023</strong><span>multi-year emergency-preparedness and continuity evidence</span></div>
+  <div><strong>3</strong><span>sanitized work-sample reconstructions from surviving records</span></div>
+</div></section>
+
+<section class="section" id="service-in-practice"><div class="container">
   <div class="section-heading-row"><div><div class="eyebrow">Service in practice</div><h2>Different settings, consistent leadership habits.</h2></div><p class="section-note">These experiences complement paid management work; they do not replace it.</p></div>
-  <div class="grid two value-grid">
+  <div class="grid two value-grid community-card-grid">
     <article class="card accent-teal">
       <div class="card-icon">CARE</div>
       <h3>Volunteer Chaplain · Salem Health / Salem Hospital</h3>
@@ -54,7 +64,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </div>
 </div></section>
 
-<section class="section"><div class="container">
+<section class="section leadership-examples"><div class="container">
   <div class="section-heading-row"><div><div class="eyebrow">Selected leadership examples</div><h2>Service that required real coordination.</h2></div><p class="section-note">Specific examples are included only where the underlying record supports the work.</p></div>
   <div class="grid two value-grid">
     <article class="card accent-teal">
@@ -126,37 +136,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </div></section>
 
 <section class="section tight"><div class="container">
-  <div class="callout"><strong>Professional relevance:</strong> the value here is the pattern—listening, organizing, mentoring, communicating, protecting trust, and helping groups move through real-world needs. Private pastoral details, names of people served, youth identities, household information, and unnecessary religious specifics are intentionally omitted.</div>
+  <div class="privacy-banner"><strong>Privacy by design</strong><span>The professional value is the pattern—listening, organizing, mentoring, communicating, protecting trust, and helping groups move through real-world needs.</span><small>Private pastoral details, names of people served, youth identities, household information, and unnecessary religious specifics are intentionally omitted.</small></div>
 </div></section>
-</BaseLayout>
 
 <style>
+  .community-hero{padding:4.7rem 0 4rem;color:#fff;background:radial-gradient(circle at 82% 18%,rgba(183,121,31,.18),transparent 24%),linear-gradient(128deg,#102f55 0%,#15486b 50%,#0f6769 100%)}.community-hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(390px,.95fr);gap:3rem;align-items:center}.community-hero h1{font-size:clamp(2.8rem,6vw,5rem);line-height:1;letter-spacing:-.05em;margin:.7rem 0 1.2rem}.community-hero p{font-size:1.12rem;color:#e5eef4;max-width:700px}.community-hero-link{color:#fff;font-weight:800;text-decoration:none;align-self:center}.service-bridge{padding:1.2rem;border-radius:24px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);box-shadow:0 24px 55px rgba(0,0,0,.16)}.bridge-title{font-size:.7rem;font-weight:900;letter-spacing:.15em;color:#ccece7;margin:.15rem 0 .9rem}.bridge-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}.bridge-node{--node:#0f766e;min-height:135px;padding:1rem;border-radius:16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);display:flex;flex-direction:column;justify-content:center}.bridge-node span{font-size:.66rem;font-weight:900;letter-spacing:.11em;color:#d5e7ef}.bridge-node strong{font-size:1.25rem;margin:.3rem 0;color:#fff}.bridge-node small{color:#d5e2ea;line-height:1.35}.community-proof-band{background:#fff;border-bottom:1px solid var(--border)}.community-proof-grid{display:grid;grid-template-columns:repeat(4,1fr)}.community-proof-grid>div{padding:1.25rem;border-right:1px solid var(--border)}.community-proof-grid>div:last-child{border-right:0}.community-proof-grid strong{display:block;font-size:1.55rem;line-height:1;color:var(--teal)}.community-proof-grid span{display:block;margin-top:.4rem;color:var(--muted);font-size:.84rem;line-height:1.35}.leadership-examples{background:linear-gradient(180deg,#f7faf9,#fff)}.community-card-grid .card{transition:transform .18s ease,box-shadow .18s ease}.community-card-grid .card:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(23,32,42,.07)}
   .toolkit-section{background:linear-gradient(180deg,#f5f8fc 0%,#f7f8fa 100%);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-  .toolkit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
-  .toolkit-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:1rem;box-shadow:0 12px 28px rgba(23,32,42,.06)}
-  .toolkit-card h3{margin:1.1rem 0 .45rem}
-  .toolkit-card p{color:var(--muted);margin:0}
-  .artifact-top{display:flex;align-items:center;justify-content:space-between;gap:.7rem;margin-bottom:.75rem;color:var(--muted);font-size:.84rem;font-weight:750}
-  .artifact-year{display:inline-flex;align-items:center;justify-content:center;padding:.2rem .55rem;border-radius:999px;background:var(--blue-soft);color:var(--accent);font-weight:850}
-  .artifact-paper{min-height:275px;border:1px solid #d7dee7;border-radius:12px;padding:1rem;background:linear-gradient(180deg,#fff 0%,#fbfcfd 100%);box-shadow:0 8px 20px rgba(23,32,42,.08);position:relative;overflow:hidden}
-  .artifact-paper::after{content:"SANITIZED RECONSTRUCTION";position:absolute;right:-42px;bottom:22px;transform:rotate(-35deg);font-size:.62rem;letter-spacing:.12em;font-weight:850;color:rgba(21,62,117,.14)}
-  .artifact-line{display:grid;grid-template-columns:82px 1fr;gap:.7rem;padding:.67rem 0;border-bottom:1px solid #edf1f4;position:relative;z-index:1}
-  .artifact-line:last-child{border-bottom:0}
-  .artifact-line b{font-size:.72rem;letter-spacing:.06em;color:var(--accent)}
-  .artifact-line span{font-size:.86rem;color:#455463;line-height:1.35}
-  .cadence-preview{display:flex;flex-direction:column;justify-content:center;gap:.2rem}
-  .cadence-row{display:grid;grid-template-columns:54px 1fr;align-items:center;gap:.65rem;padding:.68rem;border:1px solid #e5eaf0;border-radius:10px;background:#fff;position:relative;z-index:1}
-  .cadence-row span{font-size:.68rem;font-weight:850;letter-spacing:.08em;color:var(--teal)}
-  .cadence-row strong{font-size:.92rem}
-  .cadence-arrow{text-align:center;color:#94a3b8;font-weight:900;line-height:1;position:relative;z-index:1}
-  .cadence-note{font-size:.76rem;color:var(--muted);text-align:center;margin-top:.35rem;position:relative;z-index:1}
-  .bulletin-preview{padding:1.15rem}
-  .bulletin-title{font-size:.78rem;font-weight:900;letter-spacing:.08em;color:var(--accent);position:relative;z-index:1}
-  .bulletin-rule{height:3px;background:linear-gradient(90deg,var(--accent),var(--teal));margin:.55rem 0 1rem;border-radius:999px;position:relative;z-index:1}
-  .bulletin-block{display:flex;justify-content:space-between;gap:.7rem;padding:.62rem 0;border-bottom:1px solid #edf1f4;position:relative;z-index:1}
-  .bulletin-block strong{font-size:.72rem;letter-spacing:.06em;color:var(--gold)}
-  .bulletin-block span{font-size:.83rem;color:#455463;text-align:right}
-  .bulletin-deadline{margin-top:1rem;padding:.55rem .65rem;border-radius:8px;background:var(--gold-soft);color:#75500f;font-size:.78rem;font-weight:800;position:relative;z-index:1}
-  .toolkit-callout{margin-top:1.4rem}
-  @media(max-width:900px){.toolkit-grid{grid-template-columns:1fr}.artifact-paper{min-height:auto}.toolkit-card{padding:1.15rem}}
+  .toolkit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}.toolkit-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:1rem;box-shadow:0 12px 28px rgba(23,32,42,.06)}.toolkit-card h3{margin:1.1rem 0 .45rem}.toolkit-card p{color:var(--muted);margin:0}.artifact-top{display:flex;align-items:center;justify-content:space-between;gap:.7rem;margin-bottom:.75rem;color:var(--muted);font-size:.84rem;font-weight:750}.artifact-year{display:inline-flex;align-items:center;justify-content:center;padding:.2rem .55rem;border-radius:999px;background:var(--blue-soft);color:var(--accent);font-weight:850}.artifact-paper{min-height:275px;border:1px solid #d7dee7;border-radius:12px;padding:1rem;background:linear-gradient(180deg,#fff 0%,#fbfcfd 100%);box-shadow:0 8px 20px rgba(23,32,42,.08);position:relative;overflow:hidden}.artifact-paper::after{content:"SANITIZED RECONSTRUCTION";position:absolute;right:-42px;bottom:22px;transform:rotate(-35deg);font-size:.62rem;letter-spacing:.12em;font-weight:850;color:rgba(21,62,117,.14)}.artifact-line{display:grid;grid-template-columns:82px 1fr;gap:.7rem;padding:.67rem 0;border-bottom:1px solid #edf1f4;position:relative;z-index:1}.artifact-line:last-child{border-bottom:0}.artifact-line b{font-size:.72rem;letter-spacing:.06em;color:var(--accent)}.artifact-line span{font-size:.86rem;color:#455463;line-height:1.35}.cadence-preview{display:flex;flex-direction:column;justify-content:center;gap:.2rem}.cadence-row{display:grid;grid-template-columns:54px 1fr;align-items:center;gap:.65rem;padding:.68rem;border:1px solid #e5eaf0;border-radius:10px;background:#fff;position:relative;z-index:1}.cadence-row span{font-size:.68rem;font-weight:850;letter-spacing:.08em;color:var(--teal)}.cadence-row strong{font-size:.92rem}.cadence-arrow{text-align:center;color:#94a3b8;font-weight:900;line-height:1;position:relative;z-index:1}.cadence-note{font-size:.76rem;color:var(--muted);text-align:center;margin-top:.35rem;position:relative;z-index:1}.bulletin-preview{padding:1.15rem}.bulletin-title{font-size:.78rem;font-weight:900;letter-spacing:.08em;color:var(--accent);position:relative;z-index:1}.bulletin-rule{height:3px;background:linear-gradient(90deg,var(--accent),var(--teal));margin:.55rem 0 1rem;border-radius:999px;position:relative;z-index:1}.bulletin-block{display:flex;justify-content:space-between;gap:.7rem;padding:.62rem 0;border-bottom:1px solid #edf1f4;position:relative;z-index:1}.bulletin-block strong{font-size:.72rem;letter-spacing:.06em;color:var(--gold)}.bulletin-block span{font-size:.83rem;color:#455463;text-align:right}.bulletin-deadline{margin-top:1rem;padding:.55rem .65rem;border-radius:8px;background:var(--gold-soft);color:#75500f;font-size:.78rem;font-weight:800;position:relative;z-index:1}.toolkit-callout{margin-top:1.4rem}.privacy-banner{display:grid;gap:.3rem;padding:1.2rem 1.35rem;border-radius:18px;background:var(--teal-soft);border-left:5px solid var(--teal)}.privacy-banner span{color:#344854}.privacy-banner small{color:var(--muted)}
+  @media(max-width:950px){.community-hero-grid{grid-template-columns:1fr}.service-bridge{max-width:700px}.community-proof-grid{grid-template-columns:1fr 1fr}.toolkit-grid{grid-template-columns:1fr}.artifact-paper{min-height:auto}.toolkit-card{padding:1.15rem}}
+  @media(max-width:600px){.community-hero{padding:3.4rem 0}.bridge-grid,.community-proof-grid{grid-template-columns:1fr}.community-proof-grid>div{border-right:0;border-bottom:1px solid var(--border)}.community-proof-grid>div:last-child{border-bottom:0}.artifact-line{grid-template-columns:72px 1fr}.bulletin-block{display:grid}.bulletin-block span{text-align:left}}
+  @media(prefers-reduced-motion:reduce){.community-card-grid .card{transition:none}.community-card-grid .card:hover{transform:none}}
 </style>
+</BaseLayout>
