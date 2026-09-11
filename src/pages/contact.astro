@@ -2,15 +2,53 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="Contact" current="/contact/" description="Contact Richard J. Allen about full-time operations, customer-success, enablement, process-improvement, and people-leadership roles or selected SOP and process-documentation projects.">
-<section class="page-intro"><div class="container"><div class="eyebrow">Contact</div><h1>Let’s talk about the work that needs to get better.</h1><p class="lede">I’m based in Keizer, Oregon. My primary focus is the right full-time operations, customer-success, enablement, process-improvement, or people-leadership opportunity. I also take on selected, well-defined documentation projects.</p></div></section>
-<section class="section"><div class="container">
-  <div class="grid two">
-    <article class="card contact-path accent-blue"><div class="card-icon">ROLE</div><h2>Full-time opportunities</h2><p>Operations, customer success, customer operations, enablement, training, process improvement, project/program coordination, and people-leadership work.</p><a class="button" href="mailto:rjallencareer@gmail.com?subject=Full-time%20opportunity">Email about a role</a></article>
-    <article class="card contact-path accent-teal"><div class="card-icon">PROJECT</div><h2>Selected project work</h2><p>SOP development and cleanup, workflow documentation, training/onboarding guides, support-operations procedures, and documentation governance.</p><div class="actions"><a class="button" href="/project-work/">View project services</a><a class="button secondary" href="mailto:rjallencareer@gmail.com?subject=Project%20work%20inquiry">Discuss a project</a></div></article>
+<section class="contact-hero"><div class="container contact-hero-grid">
+  <div>
+    <div class="eyebrow light">Contact</div>
+    <h1>Let’s talk about the work that needs to get better.</h1>
+    <p>I’m based in Keizer, Oregon. My primary focus is the right full-time operations, customer-success, enablement, process-improvement, or people-leadership opportunity. I also take on selected, well-defined documentation projects.</p>
   </div>
-  <div class="grid two contact-grid" style="margin-top:1rem">
-    <article class="card accent-teal"><h3>Email</h3><p><a href="mailto:rjallencareer@gmail.com">rjallencareer@gmail.com</a></p></article>
-    <article class="card accent-blue"><h3>LinkedIn</h3><p><a href="https://www.linkedin.com/in/richardjallen">linkedin.com/in/richardjallen</a></p></article>
+  <div class="contact-identity" aria-label="Public contact information">
+    <div class="contact-identity-label">PUBLIC CONTACT</div>
+    <a href="mailto:rjallencareer@gmail.com"><span>EMAIL</span><strong>rjallencareer@gmail.com</strong></a>
+    <a href="https://www.linkedin.com/in/richardjallen"><span>LINKEDIN</span><strong>linkedin.com/in/richardjallen</strong></a>
+    <div class="contact-location"><span>LOCATION</span><strong>Keizer, Oregon</strong></div>
   </div>
 </div></section>
+
+<section class="section contact-path-section"><div class="container">
+  <div class="section-heading-row"><div><div class="eyebrow">Choose the right path</div><h2>Full-time work first. Selected project work second.</h2></div><p class="section-note">Two different conversations, kept intentionally separate.</p></div>
+  <div class="contact-path-grid">
+    <article class="contact-role-card">
+      <div class="path-badge primary">PRIMARY</div>
+      <div class="card-icon">ROLE</div>
+      <h2>Full-time opportunities</h2>
+      <p>Operations, customer success, customer operations, enablement, training, process improvement, project/program coordination, and people-leadership work.</p>
+      <div class="role-fit-chips"><span>Operations</span><span>Customer Success</span><span>People Leadership</span><span>Process Improvement</span><span>Enablement</span></div>
+      <a class="button" href="mailto:rjallencareer@gmail.com?subject=Full-time%20opportunity">Email about a role</a>
+    </article>
+
+    <article class="contact-project-card">
+      <div class="path-badge secondary">SECONDARY</div>
+      <div class="card-icon">PROJECT</div>
+      <h2>Selected project work</h2>
+      <p>SOP development and cleanup, workflow documentation, training/onboarding guides, support-operations procedures, and documentation governance.</p>
+      <div class="project-mini-flow" aria-label="Project work pathway"><span>Scope</span><i>→</i><span>Document</span><i>→</i><span>Deliver</span></div>
+      <div class="actions"><a class="button secondary" href="/project-work/">View project services</a><a class="contact-text-link" href="mailto:rjallencareer@gmail.com?subject=Project%20work%20inquiry">Discuss a project →</a></div>
+    </article>
+  </div>
+</div></section>
+
+<section class="section contact-proof-section"><div class="container">
+  <div class="contact-next-grid">
+    <div><div class="eyebrow">Want context first?</div><h2>See the work before starting the conversation.</h2><p>Case studies show the strongest examples; the résumé provides chronology; role pages organize the same experience by hiring need.</p></div>
+    <nav aria-label="Portfolio contact shortcuts"><a href="/case-studies/"><strong>Case Studies</strong><span>Visual proof and outcomes →</span></a><a href="/resume/"><strong>Résumé</strong><span>Career chronology →</span></a><a href="/operations-leadership/"><strong>Operations</strong><span>Management and operating systems →</span></a></nav>
+  </div>
+</div></section>
+
+<style>
+  .contact-hero{padding:4.7rem 0 4rem;color:#fff;background:radial-gradient(circle at 82% 18%,rgba(15,118,110,.3),transparent 27%),linear-gradient(128deg,#102f55 0%,#153e75 62%,#0f6769 115%)}.contact-hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(340px,.9fr);gap:3rem;align-items:center}.contact-hero h1{font-size:clamp(2.8rem,6vw,5rem);line-height:1;letter-spacing:-.05em;margin:.7rem 0 1.2rem}.contact-hero p{font-size:1.12rem;color:#e5eef4;max-width:730px}.contact-identity{padding:1.15rem;border:1px solid rgba(255,255,255,.18);border-radius:22px;background:rgba(255,255,255,.07);box-shadow:0 24px 55px rgba(0,0,0,.16)}.contact-identity-label{font-size:.68rem;font-weight:900;letter-spacing:.14em;color:#ccece7;margin-bottom:.65rem}.contact-identity>a,.contact-location{display:block;padding:.85rem .2rem;border-top:1px solid rgba(255,255,255,.12);text-decoration:none;color:#fff}.contact-identity span,.contact-location span{display:block;font-size:.64rem;font-weight:900;letter-spacing:.11em;color:#cbdbe6}.contact-identity strong,.contact-location strong{display:block;margin-top:.2rem;font-size:1rem;overflow-wrap:anywhere}.contact-path-section{background:linear-gradient(180deg,#f7f9fc,#fff)}.contact-path-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);gap:1rem}.contact-role-card,.contact-project-card{position:relative;padding:1.5rem;border-radius:22px;background:#fff;border:1px solid var(--border);box-shadow:0 14px 36px rgba(23,32,42,.06)}.contact-role-card{border-top:5px solid var(--accent)}.contact-project-card{border-top:5px solid var(--teal)}.contact-role-card h2,.contact-project-card h2{margin:.2rem 0 .7rem}.path-badge{position:absolute;right:1rem;top:1rem;padding:.25rem .5rem;border-radius:999px;font-size:.62rem;font-weight:900;letter-spacing:.1em}.path-badge.primary{background:var(--blue-soft);color:var(--accent)}.path-badge.secondary{background:var(--teal-soft);color:var(--teal)}.role-fit-chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1rem 0}.role-fit-chips span{padding:.3rem .55rem;border-radius:999px;background:#f2f5f8;font-size:.78rem;font-weight:750;color:#3f4c59}.project-mini-flow{display:flex;align-items:center;gap:.45rem;flex-wrap:wrap;margin:1rem 0;color:var(--muted);font-size:.8rem;font-weight:800}.project-mini-flow span{padding:.28rem .5rem;border:1px solid var(--border);border-radius:999px;background:#f9fbfc}.project-mini-flow i{font-style:normal;color:#9aa8b6}.contact-text-link{font-weight:800;text-decoration:none;align-self:center}.contact-proof-section{background:#fff;border-top:1px solid var(--border)}.contact-next-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(380px,.8fr);gap:2rem;align-items:center;padding:1.4rem;border-radius:22px;background:linear-gradient(120deg,#f7fbff,#f5faf9);border:1px solid var(--border)}.contact-next-grid h2{margin:.25rem 0 .6rem}.contact-next-grid p{color:var(--muted);margin-bottom:0}.contact-next-grid nav{display:grid;gap:.55rem}.contact-next-grid nav a{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.75rem .9rem;border:1px solid var(--border);border-radius:13px;background:#fff;text-decoration:none}.contact-next-grid nav strong{color:var(--ink)}.contact-next-grid nav span{color:var(--muted);font-size:.82rem;text-align:right}
+  @media(max-width:900px){.contact-hero-grid,.contact-path-grid,.contact-next-grid{grid-template-columns:1fr}.contact-identity{max-width:620px}.contact-project-card{min-height:0}}
+  @media(max-width:600px){.contact-hero{padding:3.4rem 0}.contact-next-grid nav a{display:block}.contact-next-grid nav span{display:block;text-align:left;margin-top:.2rem}.path-badge{position:static;display:inline-flex;margin-bottom:.8rem}}
+</style>
 </BaseLayout>
