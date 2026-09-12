@@ -6,6 +6,14 @@ https://richard-allen-professional-portfoli.vercel.app/
 ## Trigger
 Use this checklist only after final production QA is complete, temporary QA routes/files are removed, and the canonical site passes factual/privacy/accessibility checks.
 
+**Trigger status: COMPLETE — September 12, 2026.**
+
+- Exact viewport QA completed for the six primary recruiter pages at 390×844 and 768×1024: 12/12 combinations passed with no page-level overflow defects.
+- Temporary viewport-QA routes/files removed.
+- Clean canonical production deployment confirmed READY.
+- Public portfolio routes verified after cleanup.
+- Full-time job search remains primary; freelance/project work remains secondary.
+
 ## Highest-priority placements
 - LinkedIn Contact Info: add as Website / Portfolio.
 - LinkedIn Featured: feature the professional portfolio with a concise recruiter-facing label.
@@ -26,6 +34,7 @@ Use this checklist only after final production QA is complete, temporary QA rout
 ## Professional-profile placements to review
 Only update profiles Richard actually uses.
 - Indeed profile / resume profile
+- Monster profile / resume profile when active
 - ZipRecruiter profile
 - Glassdoor profile if actively used for applications
 - Dice or other technology/job-market profiles if actively used
@@ -58,5 +67,38 @@ Do not add the URL to:
 - No private pastoral, youth, household, legal, medical, or unnecessary religious details exposed.
 - Full-time job search remains primary; freelance/project work remains secondary.
 
-## Distribution completion record
-When rollout is executed, record each destination as: Updated / Not applicable / Blocked-manual-step / Deferred, with date and notes.
+## Distribution completion record — September 12, 2026
+
+| Destination | Status | Notes |
+| --- | --- | --- |
+| Certified production website | Updated | QA complete; temporary QA routes removed; clean production site READY. |
+| General Resume 2026 | Updated | Canonical portfolio URL already present in contact header. OED SOP wording also corrected from “Led/co-led” to “Led” during rollout reconciliation. |
+| ATS Resume | Updated | Canonical portfolio URL added to contact header. Stale education wording corrected to B.S. in Business Administration, Brigham Young University–Idaho, 2007–2011. |
+| Future tailored resumes | Deferred | Standing rule: inherit the portfolio URL unless an employer specifically requests otherwise. |
+| LinkedIn Contact Info / Featured / About | Blocked-manual-step | Browser reached LinkedIn authentication wall; no authenticated edit session or credentials available. Nothing changed. When authenticated, prioritize Contact Info + Featured; add URL to About only once if it improves the existing copy without duplication. |
+| Upwork | Blocked-manual-step | Cloudflare human-verification/CAPTCHA blocked profile inspection; no authenticated session/credentials available. Nothing changed. Only add the URL in a compliant portfolio/website field after authentication; do not use it to move clients off-platform. |
+| Indeed | Blocked-manual-step | Active account evidenced by recent Indeed account/application mail, but profile navigation redirected to Indeed authentication. Nothing changed. |
+| AIApply | Blocked-manual-step | Active account evidenced by recent account mail, but browser showed public landing/sign-in state with no authenticated session or vault credentials. Nothing changed. |
+| Career Gmail signature — rjallencareer@gmail.com | Blocked-manual-step | Gmail browser opened public Gmail/Workspace landing page rather than an authenticated inbox/settings session. Nothing changed. Add one clean “Professional Portfolio” line after manual authentication. |
+| Monster | Blocked-manual-step | Recent recruiter-contact email confirms current/recent use, but Monster browser session had no configured credentials. Nothing changed. |
+| ZipRecruiter | Not applicable | No recent account/use evidence found in the career-mailbox sweep for this rollout; do not create or modify a profile merely to distribute the link. |
+| Glassdoor | Not applicable | No recent account/use evidence found in the career-mailbox sweep for this rollout. |
+| Dice | Not applicable | No recent account/use evidence found in the career-mailbox sweep for this rollout. |
+| Application Website / Portfolio fields | Deferred | Use the canonical URL on future applications whenever a Website, Portfolio, Personal Website, or Additional Links field is provided. |
+| Recruiter outreach / networking messages | Deferred | Use selectively when the recipient would benefit from work examples; do not mass-message recruiters merely to announce the website. |
+| Interview follow-up | Deferred | Include when pointing to relevant case studies, work samples, or additional background. |
+| Cover-letter template / future letters | Deferred | Keep the portfolio available in the contact/header block when useful; do not force it into every letter body. |
+| Professional PDF resumes | Deferred | Future exports should inherit the portfolio URL from the updated resume masters. |
+| GitHub profile bio / README | Not applicable | Do not emphasize unless it clearly supports the operations/customer-success story without implying Richard is pursuing software-development roles. |
+
+## Manual-authentication queue
+Once Richard is already signed in to the relevant service in an available browser session, complete these without changing unrelated profile information:
+
+1. LinkedIn — Contact Info + Featured first; About only if useful and non-duplicative.
+2. Career Gmail — add a single Professional Portfolio line to the existing signature for rjallencareer@gmail.com.
+3. Indeed — add only if the profile exposes an appropriate Website/Portfolio/Additional Links field.
+4. AIApply — add only if the profile exposes an appropriate Website/Portfolio/Additional Links field.
+5. Monster — add only if the profile exposes an appropriate Website/Portfolio/Additional Links field.
+6. Upwork — inspect platform rules and available profile fields after human verification; add only where explicitly permitted.
+
+Do not bypass authentication, CAPTCHA, identity verification, or platform policy controls.
