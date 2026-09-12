@@ -13,6 +13,7 @@ Use this checklist only after final production QA is complete, temporary QA rout
 - Clean canonical production deployment confirmed READY.
 - Public portfolio routes verified after cleanup.
 - Full-time job search remains primary; freelance/project work remains secondary.
+- September 12 source-control reconciliation completed: Career Master remains authoritative for the BYU–Idaho B.S. current-use fact; stale contradictory no-degree/coursework language in the Job Search Control Index was corrected. OED SOP leadership wording was also normalized to “Led” in the Career Master.
 
 ## Highest-priority placements
 - LinkedIn Contact Info: add as Website / Portfolio.
@@ -40,7 +41,7 @@ Only update profiles Richard actually uses.
 - Dice or other technology/job-market profiles if actively used
 - Staffing-agency candidate profiles that provide a Website / Portfolio field
 - Professional association profiles or directories relevant to target roles
-- GitHub profile README or profile bio only if it supports the professional story and does not imply Richard is seeking software-development roles
+- GitHub repository README/profile bio only if it supports the professional story and does not imply Richard is seeking software-development roles
 
 ## Owned channels
 - Career Gmail signature
@@ -73,7 +74,7 @@ Do not add the URL to:
 | --- | --- | --- |
 | Certified production website | Updated | QA complete; temporary QA routes removed; clean production site READY. |
 | General Resume 2026 | Updated | Canonical portfolio URL already present in contact header. OED SOP wording also corrected from “Led/co-led” to “Led” during rollout reconciliation. |
-| ATS Resume | Updated | Canonical portfolio URL added to contact header. Stale education wording corrected to B.S. in Business Administration, Brigham Young University–Idaho, 2007–2011. |
+| ATS Resume | Updated | Canonical portfolio URL added to contact header. Education aligned to the Career Master’s authoritative current-use B.S. in Business Administration control. |
 | Future tailored resumes | Deferred | Standing rule: inherit the portfolio URL unless an employer specifically requests otherwise. |
 | LinkedIn Contact Info / Featured / About | Blocked-manual-step | Browser reached LinkedIn authentication wall; no authenticated edit session or credentials available. Nothing changed. When authenticated, prioritize Contact Info + Featured; add URL to About only once if it improves the existing copy without duplication. |
 | Upwork | Blocked-manual-step | Cloudflare human-verification/CAPTCHA blocked profile inspection; no authenticated session/credentials available. Nothing changed. Only add the URL in a compliant portfolio/website field after authentication; do not use it to move clients off-platform. |
@@ -81,15 +82,17 @@ Do not add the URL to:
 | AIApply | Blocked-manual-step | Active account evidenced by recent account mail, but browser showed public landing/sign-in state with no authenticated session or vault credentials. Nothing changed. |
 | Career Gmail signature — rjallencareer@gmail.com | Blocked-manual-step | Gmail browser opened public Gmail/Workspace landing page rather than an authenticated inbox/settings session. Nothing changed. Add one clean “Professional Portfolio” line after manual authentication. |
 | Monster | Blocked-manual-step | Recent recruiter-contact email confirms current/recent use, but Monster browser session had no configured credentials. Nothing changed. |
+| Opera Browser Connector | Blocked-manual-step | Connector reports browser not connected. Richard must enable “Allow AI connection” in the Opera Browser Connector and be signed in to Opera before this route can use existing authenticated tabs. |
 | ZipRecruiter | Not applicable | No recent account/use evidence found in the career-mailbox sweep for this rollout; do not create or modify a profile merely to distribute the link. |
 | Glassdoor | Not applicable | No recent account/use evidence found in the career-mailbox sweep for this rollout. |
 | Dice | Not applicable | No recent account/use evidence found in the career-mailbox sweep for this rollout. |
 | Application Website / Portfolio fields | Deferred | Use the canonical URL on future applications whenever a Website, Portfolio, Personal Website, or Additional Links field is provided. |
 | Recruiter outreach / networking messages | Deferred | Use selectively when the recipient would benefit from work examples; do not mass-message recruiters merely to announce the website. |
 | Interview follow-up | Deferred | Include when pointing to relevant case studies, work samples, or additional background. |
-| Cover-letter template / future letters | Deferred | Keep the portfolio available in the contact/header block when useful; do not force it into every letter body. |
+| Cover-letter template / future letters | Deferred | Keep the portfolio available in the contact/header block when useful; do not force it into every letter body. Historical employer-specific cover letters are not bulk-retrofitted. |
 | Professional PDF resumes | Deferred | Future exports should inherit the portfolio URL from the updated resume masters. |
-| GitHub profile bio / README | Not applicable | Do not emphasize unless it clearly supports the operations/customer-success story without implying Richard is pursuing software-development roles. |
+| GitHub repository README | Updated | Public professional-portfolio repository README prominently links the production site and describes the portfolio’s operations/customer-success/process-improvement focus. |
+| GitHub profile bio | Not applicable | Do not emphasize unless it clearly supports the operations/customer-success story without implying Richard is pursuing software-development roles. |
 
 ## Manual-authentication queue
 Once Richard is already signed in to the relevant service in an available browser session, complete these without changing unrelated profile information:
@@ -100,5 +103,8 @@ Once Richard is already signed in to the relevant service in an available browse
 4. AIApply — add only if the profile exposes an appropriate Website/Portfolio/Additional Links field.
 5. Monster — add only if the profile exposes an appropriate Website/Portfolio/Additional Links field.
 6. Upwork — inspect platform rules and available profile fields after human verification; add only where explicitly permitted.
+
+### Preferred browser route
+If using the Opera Browser Connector, Richard must first enable **Allow AI connection** in the connector and sign in to Opera. Then use already-authenticated service tabs where available. Do not enter stored passwords, bypass CAPTCHA/2FA, or modify unrelated profile information.
 
 Do not bypass authentication, CAPTCHA, identity verification, or platform policy controls.
