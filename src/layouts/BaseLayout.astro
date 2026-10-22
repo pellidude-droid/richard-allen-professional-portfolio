@@ -4,8 +4,46 @@ import Footer from '../components/Footer.astro';
 import Analytics from '@vercel/analytics/astro';
 import '../styles/global.css';
 import '../styles/portfolio-visuals.css';
+
 const { title, description, current = '' } = Astro.props;
 const fullTitle = title ? `${title} | Richard J. Allen` : 'Richard J. Allen | Operations Management & Customer Success Leader';
+const siteUrl = Astro.site ?? new URL('https://richard-allen-professional-portfoli.vercel.app');
+const canonicalURL = new URL(Astro.url.pathname, siteUrl);
+const publicEmail = 'rjallencareer@gmail.com';
+const linkedInUrl = 'https://www.linkedin.com/in/richardjallen';
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Richard J. Allen',
+  url: siteUrl.toString(),
+  email: `mailto:${publicEmail}`,
+  sameAs: [linkedInUrl],
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Keizer',
+    addressRegion: 'Oregon',
+    addressCountry: 'US'
+  },
+  knowsAbout: [
+    'Operations Management',
+    'Customer Success',
+    'People Leadership',
+    'Process Improvement',
+    'Implementation',
+    'Enablement',
+    'Training',
+    'Operational Reporting'
+  ]
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Richard J. Allen Professional Portfolio',
+  url: siteUrl.toString(),
+  description
+};
 ---
 <!doctype html>
 <html lang="en">
@@ -14,6 +52,23 @@ const fullTitle = title ? `${title} | Richard J. Allen` : 'Richard J. Allen | Op
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content={description} />
   <meta name="theme-color" content="#153e75" />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href={canonicalURL} />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Richard J. Allen Professional Portfolio" />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalURL} />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+
+  <script type="application/ld+json" set:html={JSON.stringify(personSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)}></script>
+
   <title>{fullTitle}</title>
   <Analytics />
 </head>
